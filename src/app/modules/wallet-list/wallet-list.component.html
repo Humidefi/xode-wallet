@@ -1,0 +1,12 @@
+<div class="wallet-header-container">
+  <div class="wallet-header-branding-container">
+    <img src="assets/logo-icon.webp" class="xgame-header-logo" />
+    <span class="wallet-list-header-label">Accounts</span>
+  </div>
+</div>
+<div class="wallet-list-container">
+  <app-wallet-list-item
+    *ngFor="let wallet of walletList"
+    [wallet]="wallet"
+  ></app-wallet-list-item>
+</div>
