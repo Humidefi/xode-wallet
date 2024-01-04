@@ -1,0 +1,136 @@
+.create-account-header-container {
+  display: flex;
+  flex-direction: row;
+  padding-top: 0.5rem;
+  padding-left: 1rem;
+  padding-bottom: 0.5rem;
+  padding-right: 1rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid lightgrey;
+}
+
+.create-acount-content-layout-container {
+  display: grid;
+  place-content: center;
+}
+
+.create-acount-content-container {
+  max-width: max-content;
+  margin: 2rem;
+}
+
+.create-account-header-branding-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex: 4;
+  gap: 1rem;
+}
+
+.xgame-header-logo {
+  height: 2rem;
+  width: 2rem;
+}
+
+.create-account-header-label {
+  font-family: sans-serif;
+  font-size: 1.5rem;
+  font-weight: 100;
+}
+
+.create-account-header-controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-self: center;
+  flex: 1;
+}
+
+.new-wallet-address-preview-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-top: 0.5rem;
+  padding-right: 1rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  border: 1px solid lightgrey;
+}
+
+.new-wallet-address-image-preview-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.new-wallet-address-image-preview {
+  height: 4rem;
+  width: 4rem;
+}
+
+.new-wallet-address-details-preview-container {
+  display: flex;
+  flex-direction: column;
+  flex: 5;
+}
+
+.new-wallet-address-name-preview {
+  font-weight: 100;
+}
+
+.new-wallet-address-label-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.new-wallet-preview-clipboard-icon {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 1.25rem;
+}
+
+.generated-mnemonic-seed-header {
+  font-weight: 500;
+}
+
+.generated-mnemonic-seed-container {
+  padding: 1rem;
+  border: 1px solid lightgrey;
+}
+
+.copy-generated-mnemonic-button-container {
+  margin-top: 0.5rem;
+}
+
+.copy-generated-mnemonic-button {
+  display: flex;
+  align-items: center;
+}
+
+.mnemonic-safekeeping-note-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  gap: 0.5rem;
+}
+
+.icon-container {
+  font-size: 1.25rem;
+}
+
+.confirm-saved-mnemonic-prompt-container {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.next-button {
+  width: 100%;
+}

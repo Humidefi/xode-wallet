@@ -10,6 +10,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'create-account',
+    loadChildren: () =>
+      import('./modules/create-account/create-account.module').then(
+        (m) => m.CreateAccountModule
+      ),
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',
