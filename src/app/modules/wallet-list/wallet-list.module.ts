@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { WalletListComponent } from './wallet-list.component';
 import { WalletListItemComponent } from 'src/app/components/shared/wallet-list-item/wallet-list-item.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 const routes: Routes = [
   {
@@ -13,6 +15,11 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [WalletListComponent, WalletListItemComponent],
-  imports: [CommonModule, RouterModule.forChild(routes)],
+  imports: [
+    CommonModule,
+    MatIconModule,
+    MatButtonModule,
+    RouterModule.forChild(routes),
+  ],
 })
 export class WalletListModule {}
