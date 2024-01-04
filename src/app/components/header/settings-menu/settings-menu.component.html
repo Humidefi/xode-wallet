@@ -1,0 +1,17 @@
+<button mat-icon-button color="primary" [matMenuTriggerFor]="settingsMenu">
+  <mat-icon>settings</mat-icon>
+</button>
+
+<mat-menu #settingsMenu>
+  <mat-card>
+    <mat-card-content>
+      <mat-label>Language</mat-label>
+      <select matNativeControl>
+        <option value="English">English</option>
+        <option value="Korean">Korean</option>
+        <option value="Japanese">Japanese</option>
+        <option value="Chinese">Chinese</option>
+      </select>
+    </mat-card-content>
+  </mat-card>
+</mat-menu>

@@ -1,0 +1,11 @@
+<div class="wallet-search-bar-container">
+  <input
+    matInput
+    *ngIf="isSearching"
+    type="search"
+    placeholder="Search by name"
+  />
+  <button mat-icon-button color="primary" (click)="toggleSearch()">
+    <mat-icon>search</mat-icon>
+  </button>
+</div>
