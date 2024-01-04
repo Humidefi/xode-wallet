@@ -8,4 +8,10 @@ import { Wallet } from 'src/app/models/wallet/wallet.model';
 })
 export class WalletListItemComponent {
   @Input() wallet!: Wallet;
+
+  isVisible: boolean = true;
+
+  toggleVisibility() {
+    this.isVisible = !this.isVisible;
+  }
 }

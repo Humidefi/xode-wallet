@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
+import { ClipboardModule } from '@angular/cdk/clipboard';
 
 import { WalletSearchBarComponent } from 'src/app/components/header/wallet-search-bar/wallet-search-bar.component';
 import { AddMenuComponent } from 'src/app/components/header/add-menu/add-menu.component';
@@ -31,6 +32,7 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
+    ClipboardModule,
     MatMenuModule,
     MatIconModule,
     MatButtonModule,

@@ -8,17 +8,30 @@
   </div>
   <div class="wallet-controls-container">
     <div class="wallet-common-operations-container">
-      <button mat-icon-button color="primary">
-        <mat-icon>visibility</mat-icon>
+      <button mat-icon-button color="primary" (click)="toggleVisibility()">
+        <mat-icon>{{ isVisible ? "visibility" : "visibility_off" }}</mat-icon>
       </button>
-      <button mat-icon-button color="primary">
+      <button
+        mat-icon-button
+        color="primary"
+        [cdkCopyToClipboard]="wallet.address"
+      >
         <mat-icon>file_copy</mat-icon>
       </button>
     </div>
     <div class="wallet-extra-operations-container">
-      <button mat-icon-button color="primary">
+      <button
+        mat-icon-button
+        color="primary"
+        [matMenuTriggerFor]="moreWalletSettings"
+      >
         <mat-icon>more_vert</mat-icon>
       </button>
     </div>
   </div>
 </div>
+
+<mat-menu #moreWalletSettings>
+  <button mat-menu-item>Rename</button>
+  <button mat-menu-item>Forget Account</button>
+</mat-menu>
