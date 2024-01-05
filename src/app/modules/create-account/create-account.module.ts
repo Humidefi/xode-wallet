@@ -8,6 +8,8 @@ import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { WalletAddressPreviewCardComponent } from 'src/app/components/create-account/wallet-address-preview-card/wallet-address-preview-card.component';
+import { MatInputModule } from '@angular/material/input';
 
 const routes: Routes = [
   {
@@ -17,13 +19,14 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [CreateAccountComponent],
+  declarations: [CreateAccountComponent, WalletAddressPreviewCardComponent],
   imports: [
     CommonModule,
     ClipboardModule,
     MatIconModule,
     MatButtonModule,
     MatCheckboxModule,
+    MatInputModule,
     FormsModule,
     RouterModule.forChild(routes),
   ],

@@ -1,0 +1,48 @@
+.new-wallet-address-preview-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-self: center;
+  padding-top: 0.5rem;
+  padding-right: 1rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  border: 1px solid lightgrey;
+  width: 30rem;
+}
+
+.new-wallet-address-image-preview-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.new-wallet-address-image-preview {
+  height: 4rem;
+  width: 4rem;
+}
+
+.new-wallet-address-details-preview-container {
+  display: flex;
+  flex-direction: column;
+  flex: 5;
+}
+
+.new-wallet-address-name-preview {
+  font-weight: 100;
+}
+
+.new-wallet-address-label-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.new-wallet-preview-clipboard-icon {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 1.25rem;
+}

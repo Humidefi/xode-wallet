@@ -9,13 +9,13 @@
   border: 1px solid lightgrey;
 }
 
-.create-acount-content-layout-container {
+.create-account-content-layout-container {
   display: grid;
   place-content: center;
 }
 
-.create-acount-content-container {
-  max-width: max-content;
+.create-account-content-container {
+  width: 32rem;
   margin: 2rem;
 }
 
@@ -45,55 +45,6 @@
   justify-content: space-evenly;
   align-self: center;
   flex: 1;
-}
-
-.new-wallet-address-preview-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  padding-top: 0.5rem;
-  padding-right: 1rem;
-  padding-bottom: 0.5rem;
-  padding-left: 1rem;
-  border: 1px solid lightgrey;
-}
-
-.new-wallet-address-image-preview-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-}
-
-.new-wallet-address-image-preview {
-  height: 4rem;
-  width: 4rem;
-}
-
-.new-wallet-address-details-preview-container {
-  display: flex;
-  flex-direction: column;
-  flex: 5;
-}
-
-.new-wallet-address-name-preview {
-  font-weight: 100;
-}
-
-.new-wallet-address-label-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.new-wallet-preview-clipboard-icon {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  font-size: 1.25rem;
 }
 
 .generated-mnemonic-seed-header {
@@ -133,4 +84,15 @@
 
 .next-button {
   width: 100%;
+}
+
+.create-account-form-container {
+  width: 32rem;
+  margin: 2rem;
+}
+
+.create-wallet-input-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }

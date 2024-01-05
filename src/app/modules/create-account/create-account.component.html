@@ -8,30 +8,17 @@
   </div>
 </div>
 
-<div class="create-acount-content-layout-container">
-  <div class="create-acount-content-container">
-    <div class="new-wallet-address-preview-container">
-      <div class="new-wallet-address-image-preview-container">
-        <img
-          src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.bandori.party%2Fu%2Fi%2F41Tomori-Takamatsu-JIRr83.png&f=1&nofb=1&ipt=01bb4a8c5c63ed353fd8e50b506c0e22e1238e2113debdea3fb3f490edd129f3&ipo=images"
-          class="new-wallet-address-image-preview"
-        />
-      </div>
-      <div class="new-wallet-address-details-preview-container">
-        <span class="new-wallet-address-name-preview">&lt;unknown&gt;</span>
-        <div class="new-wallet-address-label-container">
-          <span>{{ newGeneratedWalletAddress }}</span>
-          <button
-            mat-icon-button
-            [cdkCopyToClipboard]="newGeneratedWalletAddress"
-            class="new-wallet-preview-clipboard-icon"
-          >
-            <mat-icon [inline]="true">file_copy</mat-icon>
-          </button>
-        </div>
-      </div>
-    </div>
+<div class="create-account-content-layout-container">
+  <div style="margin: 2rem; width: max-content">
+    <app-wallet-address-preview-card
+      [newGeneratedWalletAddress]="newGeneratedWalletAddress"
+    ></app-wallet-address-preview-card>
+  </div>
 
+  <div
+    class="create-account-content-container"
+    *ngIf="createFormStepNo$.getValue() === 1"
+  >
     <span class="generated-mnemonic-seed-header"
       >Generated 12-word Mnemonic Seed:</span
     >
@@ -63,18 +50,44 @@
     </div>
 
     <div class="confirm-saved-mnemonic-prompt-container">
-      <mat-checkbox [(ngModel)]="isMnemonicConfirmedToBeSaved"
+      <mat-checkbox [(ngModel)]="isMnemonicConfirmSaveChecked"
         >I have saved my mnemonic seed safely.</mat-checkbox
       >
     </div>
 
     <button
       mat-raised-button
-      [disabled]="!isMnemonicConfirmedToBeSaved"
+      [disabled]="!isMnemonicConfirmSaveChecked"
       color="primary"
       class="next-button"
+      (click)="goToCreateAccountNextStep()"
     >
       Next
+    </button>
+  </div>
+
+  <div
+    class="create-account-form-container"
+    *ngIf="createFormStepNo$.getValue() === 2"
+  >
+    <mat-form-field class="create-wallet-input-container">
+      <mat-label for="account_name"
+        >A descriptive name for your account</mat-label
+      >
+      <input matInput type="text" id="account_name" />
+    </mat-form-field>
+    <mat-form-field class="create-wallet-input-container">
+      <mat-label for="account_password"
+        >A new password for your account</mat-label
+      >
+      <input matInput type="text" id="account_password" />
+    </mat-form-field>
+    <button mat-button (click)="goToCreateAccountPrevStep()">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <button mat-raised-button>
+      <mat-icon>arrow_forward</mat-icon>
+      Add the account with the generated seed
     </button>
   </div>
 </div>
