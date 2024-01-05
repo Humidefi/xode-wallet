@@ -1,12 +1,21 @@
 .create-account-header-container {
   display: flex;
-  flex-direction: row;
+  justify-content: center;
   padding-top: 0.5rem;
   padding-left: 1rem;
   padding-bottom: 0.5rem;
   padding-right: 1rem;
   margin-bottom: 0.5rem;
   border: 1px solid lightgrey;
+}
+
+.create-account-header-inner-container {
+  display: flex;
+  flex-direction: row;
+  min-width: 32rem;
+  max-width: 32rem;
+  min-height: 3rem;
+  max-height: 3rem;
 }
 
 .create-account-content-layout-container {
@@ -24,6 +33,7 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  align-self: center;
   flex: 4;
   gap: 1rem;
 }
