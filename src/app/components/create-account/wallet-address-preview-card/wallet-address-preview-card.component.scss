@@ -26,7 +26,7 @@
 .new-wallet-address-details-preview-container {
   display: flex;
   flex-direction: column;
-  flex: 5;
+  flex: 4;
 }
 
 .new-wallet-address-name-preview {
@@ -38,6 +38,11 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+
+.new-wallet-address-label-inner-container {
+  max-width: 350px;
+  word-wrap: break-word;
 }
 
 .new-wallet-preview-clipboard-icon {

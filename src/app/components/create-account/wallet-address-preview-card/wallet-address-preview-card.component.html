@@ -1,4 +1,8 @@
-<div class="new-wallet-address-preview-container">
+<app-wallet-list-item
+  [wallet]="newWallet"
+  [isPreview]="true"
+></app-wallet-list-item>
+<!--div class="new-wallet-address-preview-container">
   <div class="new-wallet-address-image-preview-container">
     <img
       src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.bandori.party%2Fu%2Fi%2F41Tomori-Takamatsu-JIRr83.png&f=1&nofb=1&ipt=01bb4a8c5c63ed353fd8e50b506c0e22e1238e2113debdea3fb3f490edd129f3&ipo=images"
@@ -8,7 +12,11 @@
   <div class="new-wallet-address-details-preview-container">
     <span class="new-wallet-address-name-preview">&lt;unknown&gt;</span>
     <div class="new-wallet-address-label-container">
-      <span>{{ newGeneratedWalletAddress }}</span>
+      <div class="new-wallet-address-label-inner-container">
+        <span class="new-wallet-address-label">{{
+          newGeneratedWalletAddress
+        }}</span>
+      </div>
       <button
         mat-icon-button
         [cdkCopyToClipboard]="newGeneratedWalletAddress"
@@ -18,4 +26,4 @@
       </button>
     </div>
   </div>
-</div>
+</div-->

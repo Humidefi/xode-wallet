@@ -20,8 +20,15 @@
     "@angular/platform-browser": "^15.1.0",
     "@angular/platform-browser-dynamic": "^15.1.0",
     "@angular/router": "^15.1.0",
+    "@polkadot/extension-base": "^0.46.6",
+    "@polkadot/types": "^10.11.2",
+    "@polkadot/ui-keyring": "^3.6.4",
+    "@polkadot/ui-shared": "^3.6.4",
+    "@polkadot/util-crypto": "^12.6.2",
+    "process": "^0.11.10",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
+    "util": "^0.12.5",
     "zone.js": "~0.12.0"
   },
   "devDependencies": {
@@ -36,5 +43,8 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
     "typescript": "~4.9.4"
+  },
+  "browser": {
+    "crypto": false
   }
 }

@@ -1,14 +1,19 @@
 <div class="wallet-main-container">
   <div class="wallet-details-container">
-    <img src="{{ wallet.image }}" class="wallet-image" />
+    <app-identicon [address]="wallet.address"></app-identicon>
     <div class="wallet-text-details-container">
       <span class="wallet-name-label">{{ wallet.name }}</span>
-      <span class="wallet-name-address-label">{{ wallet.address }}</span>
+      <span class="wallet-address-label">{{ wallet.address }}</span>
     </div>
   </div>
   <div class="wallet-controls-container">
     <div class="wallet-common-operations-container">
-      <button mat-icon-button color="primary" (click)="toggleVisibility()">
+      <button
+        mat-icon-button
+        *ngIf="!isPreview"
+        color="primary"
+        (click)="toggleVisibility()"
+      >
         <mat-icon>{{ isVisible ? "visibility" : "visibility_off" }}</mat-icon>
       </button>
       <button
@@ -19,7 +24,7 @@
         <mat-icon>file_copy</mat-icon>
       </button>
     </div>
-    <div class="wallet-extra-operations-container">
+    <div *ngIf="!isPreview" class="wallet-extra-operations-container">
       <button
         mat-icon-button
         color="primary"

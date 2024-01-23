@@ -1,0 +1,9 @@
+<svg [attr.height]="64" viewBox="0 0 64 64" [attr.width]="64">
+  <circle
+    *ngFor="let circle of circleList"
+    [attr.cx]="circle.cx"
+    [attr.cy]="circle.cy"
+    [attr.fill]="circle.fill"
+    [attr.r]="circle.r"
+  />
+</svg>

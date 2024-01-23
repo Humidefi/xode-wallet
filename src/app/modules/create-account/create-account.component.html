@@ -12,8 +12,9 @@
 
 <div class="create-account-content-layout-container">
   <div style="margin: 2rem; width: max-content">
+    <!--app-wallet-list-item [wallet]="newGeneratedWallet"></app-wallet-list-item-->
     <app-wallet-address-preview-card
-      [newGeneratedWalletAddress]="newGeneratedWalletAddress"
+      [newWallet]="newGeneratedWallet"
     ></app-wallet-address-preview-card>
   </div>
 
@@ -72,24 +73,31 @@
     class="create-account-form-container"
     *ngIf="createFormStepNo$.getValue() === 2"
   >
-    <mat-form-field class="create-wallet-input-container">
-      <mat-label for="account_name"
-        >A descriptive name for your account</mat-label
-      >
-      <input matInput type="text" id="account_name" />
-    </mat-form-field>
-    <mat-form-field class="create-wallet-input-container">
-      <mat-label for="account_password"
-        >A new password for your account</mat-label
-      >
-      <input matInput type="text" id="account_password" />
-    </mat-form-field>
-    <button mat-button (click)="goToCreateAccountPrevStep()">
-      <mat-icon>arrow_back</mat-icon>
-    </button>
-    <button mat-raised-button>
-      <mat-icon>arrow_forward</mat-icon>
-      Add the account with the generated seed
-    </button>
+    <form [formGroup]="newAccountForm" (ngSubmit)="saveNewAccount()">
+      <mat-form-field class="create-wallet-input-container">
+        <mat-label for="account_name"
+          >A descriptive name for your account</mat-label
+        >
+        <input matInput type="text" formControlName="name" id="account_name" />
+      </mat-form-field>
+      <mat-form-field class="create-wallet-input-container">
+        <mat-label for="account_password"
+          >A new password for your account</mat-label
+        >
+        <input
+          matInput
+          type="password"
+          formControlName="password"
+          id="account_password"
+        />
+      </mat-form-field>
+      <button mat-button (click)="goToCreateAccountPrevStep()">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+      <button mat-raised-button (click)="saveNewAccount()">
+        <mat-icon>arrow_forward</mat-icon>
+        Add the account with the generated seed
+      </button>
+    </form>
   </div>
 </div>

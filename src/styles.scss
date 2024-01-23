@@ -1,4 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+  display: grid;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  min-width: 600px;
+  max-width: 800px; /* max Chrome extension width */
+  justify-self: center;
+  display: grid;
+  justify-content: center;
+  border: 1px solid grey;
+}

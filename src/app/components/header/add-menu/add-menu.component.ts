@@ -9,6 +9,6 @@ import { Router } from '@angular/router';
 export class AddMenuComponent {
   constructor(private router: Router) {}
   goToCreateAccount() {
-    this.router.navigateByUrl('/create-account');
+    this.router.navigateByUrl('create-account');
   }
 }

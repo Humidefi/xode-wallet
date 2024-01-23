@@ -1,0 +1,13 @@
+{
+  "name": "XGame Wallet",
+  "version": "1.0",
+  "description": "Wallet extension for XGame",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "index.html"
+  },
+  "permissions": ["storage", "tabs"],
+  "content_security_policy": {
+    "extension_pages": "default-src 'self'; object-src 'self'"
+  }
+}
