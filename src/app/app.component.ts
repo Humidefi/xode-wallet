@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import keyring from '@polkadot/ui-keyring';
 import { AccountsStore } from '@polkadot/extension-base/stores';
 import '@polkadot/api-augment';
@@ -9,7 +9,7 @@ import { cryptoWaitReady } from '@polkadot/util-crypto';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'xgame-wallet';
 
   constructor() {
@@ -17,5 +17,16 @@ export class AppComponent {
       await cryptoWaitReady();
       keyring.loadAll({ store: new AccountsStore(), type: 'sr25519' });
     })();
+  }
+
+  ngOnInit(): void {
+    const isExtensionPopup = window.innerWidth <= 560;
+    if (isExtensionPopup) {
+      if (chrome) {
+        chrome.tabs.create({ url: '/index.html' });
+      } else {
+        console.error('chrome API not found');
+      }
+    }
   }
 }

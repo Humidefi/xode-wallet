@@ -1,13 +1,30 @@
 import { Injectable } from '@angular/core';
+import { Keyring } from '@polkadot/keyring';
+import { web3Enable } from '@polkadot/extension-dapp';
+import { accounts as accountsObservable } from '@polkadot/ui-keyring/observable/accounts';
 import { Wallet } from 'src/app/models/wallet/wallet.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class WalletService {
-  constructor() {}
+  xGameKeyring: Keyring;
+
+  constructor() {
+    this.xGameKeyring = new Keyring({ type: 'sr25519' });
+    (async () => {
+      await web3Enable('XGAME DASHBOARD');
+    })();
+  }
 
   getWalletList() {
+    // this.xGameKeyring.getPairs()
+    accountsObservable;
+    return this.xGameKeyring.pairs.map<Wallet>((pair) => ({
+      name: pair.meta.name || '',
+      address: pair.address,
+    }));
+    /*
     const newWalletList: Wallet[] = [
       {
         name: 'nyan',
@@ -29,5 +46,6 @@ export class WalletService {
       },
     ];
     return newWalletList;
+    */
   }
 }

@@ -9,13 +9,6 @@ const routes: Routes = [
         (m) => m.WalletListModule
       ),
   },
-  // {
-  //   path: 'home',
-  //   loadChildren: () =>
-  //     import('./modules/create-account/create-account.module').then(
-  //       (m) => m.CreateAccountModule
-  //     ),
-  // },
   {
     path: 'create-account',
     loadChildren: () =>

@@ -1,6 +1,7 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import keyring from '@polkadot/ui-keyring';
+import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { Wallet } from 'src/app/models/wallet/wallet.model';
 import { AccountService } from 'src/app/services/account/account.service';
@@ -20,7 +21,9 @@ export class CreateAccountComponent implements OnInit {
 
   constructor(
     private accountService: AccountService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private location: Location,
+    private router: Router
   ) {}
 
   newGeneratedWalletAddress = '';
@@ -30,6 +33,10 @@ export class CreateAccountComponent implements OnInit {
 
   createNewMnemonicSeedAndAddressPair() {
     return this.accountService.createSeed();
+  }
+
+  cancelAccountCreation() {
+    this.location.back();
   }
 
   goToCreateAccountPrevStep() {
@@ -62,6 +69,8 @@ export class CreateAccountComponent implements OnInit {
         this.newGeneratedMnemonicSeed,
         'sr25519'
       );
+
+      this.router.navigateByUrl('home');
     } catch (error) {
       alert(`An error occurred while trying to save the account: ${error}`);
     }

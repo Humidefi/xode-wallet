@@ -3,7 +3,7 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
-    "types": ["node"]
+    "types": ["node", "chrome"]
   },
   "files": ["src/polyfill.ts", "src/main.ts"],
   "include": ["src/**/*.d.ts"]
