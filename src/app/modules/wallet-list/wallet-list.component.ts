@@ -12,11 +12,13 @@ export class WalletListComponent implements OnInit {
 
   constructor(private walletService: WalletService) {}
 
-  getWalletList() {
-    this.walletList = this.walletService.getWalletList();
+  async getWalletList() {
+    this.walletList = await this.walletService.getWalletList();
   }
 
   ngOnInit(): void {
-    this.getWalletList();
+    (async () => {
+      await this.getWalletList();
+    })();
   }
 }

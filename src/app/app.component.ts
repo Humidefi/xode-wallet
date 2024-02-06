@@ -16,6 +16,11 @@ export class AppComponent implements OnInit {
     (async () => {
       await cryptoWaitReady();
       keyring.loadAll({ store: new AccountsStore(), type: 'sr25519' });
+      if (chrome) {
+        chrome.storage.local.get(null, function (data) {
+          console.log(data);
+        });
+      }
     })();
   }
 
@@ -25,7 +30,7 @@ export class AppComponent implements OnInit {
       if (chrome) {
         chrome.tabs.create({ url: '/index.html' });
       } else {
-        console.error('chrome API not found');
+        console.error('Chrome API not found');
       }
     }
   }
