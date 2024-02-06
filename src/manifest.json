@@ -1,13 +1,13 @@
 {
-  "name": "XGame Wallet",
+  "name": "Xode Wallet",
   "version": "1.0",
-  "description": "Wallet extension for XGame",
+  "description": "Wallet extension for Xode",
   "manifest_version": 3,
   "action": {
     "default_popup": "index.html"
   },
   "permissions": ["storage", "tabs"],
   "content_security_policy": {
-    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'; style-src 'self' 'styles.css' 'indigo-pink.css' 'unsafe-inline'"
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'; style-src 'self' 'unsafe-inline'"
   }
 }

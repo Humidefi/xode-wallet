@@ -1,4 +1,78 @@
 /* You can add global styles to this file, and also import other style files */
+@use "@angular/material" as mat;
+
+@include mat.core();
+
+/*
+  0: #000000,
+  10: #3e001d,
+  20: #650032,
+  25: #79003e,
+  30: #8e0049,
+  35: #a30055,
+*/
+
+$xode-primary-pallet: (
+  50: #650032,
+  100: #79003e,
+  200: #8e0049,
+  300: #a30055,
+  400: #ba0062,
+  500: #e6087b,
+  600: #ff4994,
+  700: #ff84ae,
+  800: #ffb1c7,
+  900: #ffd9e2,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: white,
+  ),
+);
+
+$xode-accent-pallet: (
+  50: #422931,
+  100: #4e343c,
+  200: #5b3f47,
+  300: #674b53,
+  400: #74565e,
+  500: #8f6f77,
+  600: #aa8891,
+  700: #c6a2ab,
+  800: #e3bdc6,
+  900: #ffd9e2,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: white,
+  ),
+);
+
+// $xode-primary: mat.define-palette(mat.$indigo-palette);
+$xode-primary: mat.define-palette($xode-primary-pallet);
+$xode-accent: mat.define-palette(mat.$pink-palette);
+
+$xode-theme-light: mat.define-light-theme(
+  (
+    color: (
+      primary: $xode-primary,
+      accent: $xode-accent,
+    ),
+  )
+);
+
+$xode-theme-dark: mat.define-dark-theme(
+  (
+    color: (
+      primary: $xode-primary,
+      accent: $xode-accent,
+    ),
+  )
+);
+
+@include mat.all-component-themes($xode-theme-dark);
 
 html,
 body {
@@ -13,5 +87,471 @@ body {
   justify-self: center;
   display: grid;
   justify-content: center;
-  border: 1px solid grey;
+  border: 1px solid #7e7576;
 }
+
+.dark-theme {
+  /* @include mat.core-theme($xode-theme-dark); */
+  @include mat.core-color($xode-theme-dark);
+  /* @include mat.button-theme($xode-theme-dark); */
+  @include mat.button-color($xode-theme-dark);
+}
+
+/* Material Generated Theme
+
+--DO NOT REMOVE--
+
+:root {
+  --md-source: #e6087b;
+  // primary
+  --md-ref-palette-primary0: #000000;
+  --md-ref-palette-primary10: #3e001d;
+  --md-ref-palette-primary20: #650032;
+  --md-ref-palette-primary25: #79003e;
+  --md-ref-palette-primary30: #8e0049;
+  --md-ref-palette-primary35: #a30055;
+  --md-ref-palette-primary40: #ba0062;
+  --md-ref-palette-primary50: #e6087b;
+  --md-ref-palette-primary60: #ff4994;
+  --md-ref-palette-primary70: #ff84ae;
+  --md-ref-palette-primary80: #ffb1c7;
+  --md-ref-palette-primary90: #ffd9e2;
+  --md-ref-palette-primary95: #ffecef;
+  --md-ref-palette-primary98: #fff8f8;
+  --md-ref-palette-primary99: #fffbff;
+  --md-ref-palette-primary100: #ffffff;
+  // secondary
+  --md-ref-palette-secondary0: #000000;
+  --md-ref-palette-secondary10: #2b151c;
+  --md-ref-palette-secondary20: #422931;
+  --md-ref-palette-secondary25: #4e343c;
+  --md-ref-palette-secondary30: #5b3f47;
+  --md-ref-palette-secondary35: #674b53;
+  --md-ref-palette-secondary40: #74565e;
+  --md-ref-palette-secondary50: #8f6f77;
+  --md-ref-palette-secondary60: #aa8891;
+  --md-ref-palette-secondary70: #c6a2ab;
+  --md-ref-palette-secondary80: #e3bdc6;
+  --md-ref-palette-secondary90: #ffd9e2;
+  --md-ref-palette-secondary95: #ffecef;
+  --md-ref-palette-secondary98: #fff8f8;
+  --md-ref-palette-secondary99: #fffbff;
+  --md-ref-palette-secondary100: #ffffff;
+  // tertiary
+  --md-ref-palette-tertiary0: #000000;
+  --md-ref-palette-tertiary10: #2e1500;
+  --md-ref-palette-tertiary20: #47290b;
+  --md-ref-palette-tertiary25: #543415;
+  --md-ref-palette-tertiary30: #613f1f;
+  --md-ref-palette-tertiary35: #6f4b2a;
+  --md-ref-palette-tertiary40: #7c5635;
+  --md-ref-palette-tertiary50: #986f4b;
+  --md-ref-palette-tertiary60: #b48862;
+  --md-ref-palette-tertiary70: #d1a27a;
+  --md-ref-palette-tertiary80: #efbd93;
+  --md-ref-palette-tertiary90: #ffdcc1;
+  --md-ref-palette-tertiary95: #ffeee2;
+  --md-ref-palette-tertiary98: #fff8f5;
+  --md-ref-palette-tertiary99: #fffbff;
+  --md-ref-palette-tertiary100: #ffffff;
+  // neutral
+  --md-ref-palette-neutral0: #000000;
+  --md-ref-palette-neutral10: #201a1b;
+  --md-ref-palette-neutral20: #352f30;
+  --md-ref-palette-neutral25: #413a3b;
+  --md-ref-palette-neutral30: #4c4546;
+  --md-ref-palette-neutral35: #585052;
+  --md-ref-palette-neutral40: #645c5e;
+  --md-ref-palette-neutral50: #7e7576;
+  --md-ref-palette-neutral60: #988e90;
+  --md-ref-palette-neutral70: #b3a9aa;
+  --md-ref-palette-neutral80: #cfc4c5;
+  --md-ref-palette-neutral90: #ece0e1;
+  --md-ref-palette-neutral95: #faeeef;
+  --md-ref-palette-neutral98: #fff8f8;
+  --md-ref-palette-neutral99: #fffbff;
+  --md-ref-palette-neutral100: #ffffff;
+  // neutral-variant
+  --md-ref-palette-neutral-variant0: #000000;
+  --md-ref-palette-neutral-variant10: #24191c;
+  --md-ref-palette-neutral-variant20: #3a2d30;
+  --md-ref-palette-neutral-variant25: #45383b;
+  --md-ref-palette-neutral-variant30: #514346;
+  --md-ref-palette-neutral-variant35: #5d4f52;
+  --md-ref-palette-neutral-variant40: #6a5b5e;
+  --md-ref-palette-neutral-variant50: #837377;
+  --md-ref-palette-neutral-variant60: #9e8c90;
+  --md-ref-palette-neutral-variant70: #b9a7aa;
+  --md-ref-palette-neutral-variant80: #d5c2c5;
+  --md-ref-palette-neutral-variant90: #f2dde1;
+  --md-ref-palette-neutral-variant95: #ffecef;
+  --md-ref-palette-neutral-variant98: #fff8f8;
+  --md-ref-palette-neutral-variant99: #fffbff;
+  --md-ref-palette-neutral-variant100: #ffffff;
+  // error
+  --md-ref-palette-error0: #000000;
+  --md-ref-palette-error10: #410002;
+  --md-ref-palette-error20: #690005;
+  --md-ref-palette-error25: #7e0007;
+  --md-ref-palette-error30: #93000a;
+  --md-ref-palette-error35: #a80710;
+  --md-ref-palette-error40: #ba1a1a;
+  --md-ref-palette-error50: #de3730;
+  --md-ref-palette-error60: #ff5449;
+  --md-ref-palette-error70: #ff897d;
+  --md-ref-palette-error80: #ffb4ab;
+  --md-ref-palette-error90: #ffdad6;
+  --md-ref-palette-error95: #ffedea;
+  --md-ref-palette-error98: #fff8f7;
+  --md-ref-palette-error99: #fffbff;
+  --md-ref-palette-error100: #ffffff;
+  // light
+  --md-sys-color-primary-light: #ba0062;
+  --md-sys-color-on-primary-light: #ffffff;
+  --md-sys-color-primary-container-light: #ffd9e2;
+  --md-sys-color-on-primary-container-light: #3e001d;
+  --md-sys-color-secondary-light: #74565e;
+  --md-sys-color-on-secondary-light: #ffffff;
+  --md-sys-color-secondary-container-light: #ffd9e2;
+  --md-sys-color-on-secondary-container-light: #2b151c;
+  --md-sys-color-tertiary-light: #7c5635;
+  --md-sys-color-on-tertiary-light: #ffffff;
+  --md-sys-color-tertiary-container-light: #ffdcc1;
+  --md-sys-color-on-tertiary-container-light: #2e1500;
+  --md-sys-color-error-light: #ba1a1a;
+  --md-sys-color-error-container-light: #ffdad6;
+  --md-sys-color-on-error-light: #ffffff;
+  --md-sys-color-on-error-container-light: #410002;
+  --md-sys-color-background-light: #fffbff;
+  --md-sys-color-on-background-light: #201a1b;
+  --md-sys-color-surface-light: #fffbff;
+  --md-sys-color-on-surface-light: #201a1b;
+  --md-sys-color-surface-variant-light: #f2dde1;
+  --md-sys-color-on-surface-variant-light: #514346;
+  --md-sys-color-outline-light: #837377;
+  --md-sys-color-inverse-on-surface-light: #faeeef;
+  --md-sys-color-inverse-surface-light: #352f30;
+  --md-sys-color-inverse-primary-light: #ffb1c7;
+  --md-sys-color-shadow-light: #000000;
+  --md-sys-color-surface-tint-light: #ba0062;
+  --md-sys-color-outline-variant-light: #d5c2c5;
+  --md-sys-color-scrim-light: #000000;
+  // dark
+  --md-sys-color-primary-dark: #ffb1c7;
+  --md-sys-color-on-primary-dark: #650032;
+  --md-sys-color-primary-container-dark: #8e0049;
+  --md-sys-color-on-primary-container-dark: #ffd9e2;
+  --md-sys-color-secondary-dark: #e3bdc6;
+  --md-sys-color-on-secondary-dark: #422931;
+  --md-sys-color-secondary-container-dark: #5b3f47;
+  --md-sys-color-on-secondary-container-dark: #ffd9e2;
+  --md-sys-color-tertiary-dark: #efbd93;
+  --md-sys-color-on-tertiary-dark: #47290b;
+  --md-sys-color-tertiary-container-dark: #613f1f;
+  --md-sys-color-on-tertiary-container-dark: #ffdcc1;
+  --md-sys-color-error-dark: #ffb4ab;
+  --md-sys-color-error-container-dark: #93000a;
+  --md-sys-color-on-error-dark: #690005;
+  --md-sys-color-on-error-container-dark: #ffdad6;
+  --md-sys-color-background-dark: #201a1b;
+  --md-sys-color-on-background-dark: #ece0e1;
+  --md-sys-color-surface-dark: #201a1b;
+  --md-sys-color-on-surface-dark: #ece0e1;
+  --md-sys-color-surface-variant-dark: #514346;
+  --md-sys-color-on-surface-variant-dark: #d5c2c5;
+  --md-sys-color-outline-dark: #9e8c90;
+  --md-sys-color-inverse-on-surface-dark: #201a1b;
+  --md-sys-color-inverse-surface-dark: #ece0e1;
+  --md-sys-color-inverse-primary-dark: #ba0062;
+  --md-sys-color-shadow-dark: #000000;
+  --md-sys-color-surface-tint-dark: #ffb1c7;
+  --md-sys-color-outline-variant-dark: #514346;
+  --md-sys-color-scrim-dark: #000000;
+  // display - large
+  --md-sys-typescale-display-large-font-family-name: Roboto;
+  --md-sys-typescale-display-large-font-family-style: Regular;
+  --md-sys-typescale-display-large-font-weight: 400px;
+  --md-sys-typescale-display-large-font-size: 57px;
+  --md-sys-typescale-display-large-line-height: 64px;
+  --md-sys-typescale-display-large-letter-spacing: -0.25px;
+  // display - medium
+  --md-sys-typescale-display-medium-font-family-name: Roboto;
+  --md-sys-typescale-display-medium-font-family-style: Regular;
+  --md-sys-typescale-display-medium-font-weight: 400px;
+  --md-sys-typescale-display-medium-font-size: 45px;
+  --md-sys-typescale-display-medium-line-height: 52px;
+  --md-sys-typescale-display-medium-letter-spacing: 0px;
+  // display - small
+  --md-sys-typescale-display-small-font-family-name: Roboto;
+  --md-sys-typescale-display-small-font-family-style: Regular;
+  --md-sys-typescale-display-small-font-weight: 400px;
+  --md-sys-typescale-display-small-font-size: 36px;
+  --md-sys-typescale-display-small-line-height: 44px;
+  --md-sys-typescale-display-small-letter-spacing: 0px;
+  // headline - large
+  --md-sys-typescale-headline-large-font-family-name: Roboto;
+  --md-sys-typescale-headline-large-font-family-style: Regular;
+  --md-sys-typescale-headline-large-font-weight: 400px;
+  --md-sys-typescale-headline-large-font-size: 32px;
+  --md-sys-typescale-headline-large-line-height: 40px;
+  --md-sys-typescale-headline-large-letter-spacing: 0px;
+  // headline - medium
+  --md-sys-typescale-headline-medium-font-family-name: Roboto;
+  --md-sys-typescale-headline-medium-font-family-style: Regular;
+  --md-sys-typescale-headline-medium-font-weight: 400px;
+  --md-sys-typescale-headline-medium-font-size: 28px;
+  --md-sys-typescale-headline-medium-line-height: 36px;
+  --md-sys-typescale-headline-medium-letter-spacing: 0px;
+  // headline - small
+  --md-sys-typescale-headline-small-font-family-name: Roboto;
+  --md-sys-typescale-headline-small-font-family-style: Regular;
+  --md-sys-typescale-headline-small-font-weight: 400px;
+  --md-sys-typescale-headline-small-font-size: 24px;
+  --md-sys-typescale-headline-small-line-height: 32px;
+  --md-sys-typescale-headline-small-letter-spacing: 0px;
+  // body - large
+  --md-sys-typescale-body-large-font-family-name: Roboto;
+  --md-sys-typescale-body-large-font-family-style: Regular;
+  --md-sys-typescale-body-large-font-weight: 400px;
+  --md-sys-typescale-body-large-font-size: 16px;
+  --md-sys-typescale-body-large-line-height: 24px;
+  --md-sys-typescale-body-large-letter-spacing: 0.5px;
+  // body - medium
+  --md-sys-typescale-body-medium-font-family-name: Roboto;
+  --md-sys-typescale-body-medium-font-family-style: Regular;
+  --md-sys-typescale-body-medium-font-weight: 400px;
+  --md-sys-typescale-body-medium-font-size: 14px;
+  --md-sys-typescale-body-medium-line-height: 20px;
+  --md-sys-typescale-body-medium-letter-spacing: 0.25px;
+  // body - small
+  --md-sys-typescale-body-small-font-family-name: Roboto;
+  --md-sys-typescale-body-small-font-family-style: Regular;
+  --md-sys-typescale-body-small-font-weight: 400px;
+  --md-sys-typescale-body-small-font-size: 12px;
+  --md-sys-typescale-body-small-line-height: 16px;
+  --md-sys-typescale-body-small-letter-spacing: 0.4px;
+  // label - large
+  --md-sys-typescale-label-large-font-family-name: Roboto;
+  --md-sys-typescale-label-large-font-family-style: Medium;
+  --md-sys-typescale-label-large-font-weight: 500px;
+  --md-sys-typescale-label-large-font-size: 14px;
+  --md-sys-typescale-label-large-line-height: 20px;
+  --md-sys-typescale-label-large-letter-spacing: 0.1px;
+  // label - medium
+  --md-sys-typescale-label-medium-font-family-name: Roboto;
+  --md-sys-typescale-label-medium-font-family-style: Medium;
+  --md-sys-typescale-label-medium-font-weight: 500px;
+  --md-sys-typescale-label-medium-font-size: 12px;
+  --md-sys-typescale-label-medium-line-height: 16px;
+  --md-sys-typescale-label-medium-letter-spacing: 0.5px;
+  // label - small
+  --md-sys-typescale-label-small-font-family-name: Roboto;
+  --md-sys-typescale-label-small-font-family-style: Medium;
+  --md-sys-typescale-label-small-font-weight: 500px;
+  --md-sys-typescale-label-small-font-size: 11px;
+  --md-sys-typescale-label-small-line-height: 16px;
+  --md-sys-typescale-label-small-letter-spacing: 0.5px;
+  // title - large
+  --md-sys-typescale-title-large-font-family-name: Roboto;
+  --md-sys-typescale-title-large-font-family-style: Regular;
+  --md-sys-typescale-title-large-font-weight: 400px;
+  --md-sys-typescale-title-large-font-size: 22px;
+  --md-sys-typescale-title-large-line-height: 28px;
+  --md-sys-typescale-title-large-letter-spacing: 0px;
+  // title - medium
+  --md-sys-typescale-title-medium-font-family-name: Roboto;
+  --md-sys-typescale-title-medium-font-family-style: Medium;
+  --md-sys-typescale-title-medium-font-weight: 500px;
+  --md-sys-typescale-title-medium-font-size: 16px;
+  --md-sys-typescale-title-medium-line-height: 24px;
+  --md-sys-typescale-title-medium-letter-spacing: 0.15px;
+  // title - small
+  --md-sys-typescale-title-small-font-family-name: Roboto;
+  --md-sys-typescale-title-small-font-family-style: Medium;
+  --md-sys-typescale-title-small-font-weight: 500px;
+  --md-sys-typescale-title-small-font-size: 14px;
+  --md-sys-typescale-title-small-line-height: 20px;
+  --md-sys-typescale-title-small-letter-spacing: 0.1px;
+}
+
+.primary {
+  background-color: var(--md-sys-color-primary);
+}
+.primary-text {
+  color: var(--md-sys-color-primary);
+}
+.on-primary {
+  background-color: var(--md-sys-color-on-primary);
+}
+.on-primary-text {
+  color: var(--md-sys-color-on-primary);
+}
+.primary-container {
+  background-color: var(--md-sys-color-primary-container);
+}
+.primary-container-text {
+  color: var(--md-sys-color-primary-container);
+}
+.on-primary-container {
+  background-color: var(--md-sys-color-on-primary-container);
+}
+.on-primary-container-text {
+  color: var(--md-sys-color-on-primary-container);
+}
+.secondary {
+  background-color: var(--md-sys-color-secondary);
+}
+.secondary-text {
+  color: var(--md-sys-color-secondary);
+}
+.on-secondary {
+  background-color: var(--md-sys-color-on-secondary);
+}
+.on-secondary-text {
+  color: var(--md-sys-color-on-secondary);
+}
+.secondary-container {
+  background-color: var(--md-sys-color-secondary-container);
+}
+.secondary-container-text {
+  color: var(--md-sys-color-secondary-container);
+}
+.on-secondary-container {
+  background-color: var(--md-sys-color-on-secondary-container);
+}
+.on-secondary-container-text {
+  color: var(--md-sys-color-on-secondary-container);
+}
+.tertiary {
+  background-color: var(--md-sys-color-tertiary);
+}
+.tertiary-text {
+  color: var(--md-sys-color-tertiary);
+}
+.on-tertiary {
+  background-color: var(--md-sys-color-on-tertiary);
+}
+.on-tertiary-text {
+  color: var(--md-sys-color-on-tertiary);
+}
+.tertiary-container {
+  background-color: var(--md-sys-color-tertiary-container);
+}
+.tertiary-container-text {
+  color: var(--md-sys-color-tertiary-container);
+}
+.on-tertiary-container {
+  background-color: var(--md-sys-color-on-tertiary-container);
+}
+.on-tertiary-container-text {
+  color: var(--md-sys-color-on-tertiary-container);
+}
+.error {
+  background-color: var(--md-sys-color-error);
+}
+.error-text {
+  color: var(--md-sys-color-error);
+}
+.error-container {
+  background-color: var(--md-sys-color-error-container);
+}
+.error-container-text {
+  color: var(--md-sys-color-error-container);
+}
+.on-error {
+  background-color: var(--md-sys-color-on-error);
+}
+.on-error-text {
+  color: var(--md-sys-color-on-error);
+}
+.on-error-container {
+  background-color: var(--md-sys-color-on-error-container);
+}
+.on-error-container-text {
+  color: var(--md-sys-color-on-error-container);
+}
+.background {
+  background-color: var(--md-sys-color-background);
+}
+.background-text {
+  color: var(--md-sys-color-background);
+}
+.on-background {
+  background-color: var(--md-sys-color-on-background);
+}
+.on-background-text {
+  color: var(--md-sys-color-on-background);
+}
+.surface {
+  background-color: var(--md-sys-color-surface);
+}
+.surface-text {
+  color: var(--md-sys-color-surface);
+}
+.on-surface {
+  background-color: var(--md-sys-color-on-surface);
+}
+.on-surface-text {
+  color: var(--md-sys-color-on-surface);
+}
+.surface-variant {
+  background-color: var(--md-sys-color-surface-variant);
+}
+.surface-variant-text {
+  color: var(--md-sys-color-surface-variant);
+}
+.on-surface-variant {
+  background-color: var(--md-sys-color-on-surface-variant);
+}
+.on-surface-variant-text {
+  color: var(--md-sys-color-on-surface-variant);
+}
+.outline {
+  background-color: var(--md-sys-color-outline);
+}
+.outline-text {
+  color: var(--md-sys-color-outline);
+}
+.inverse-on-surface {
+  background-color: var(--md-sys-color-inverse-on-surface);
+}
+.inverse-on-surface-text {
+  color: var(--md-sys-color-inverse-on-surface);
+}
+.inverse-surface {
+  background-color: var(--md-sys-color-inverse-surface);
+}
+.inverse-surface-text {
+  color: var(--md-sys-color-inverse-surface);
+}
+.inverse-primary {
+  background-color: var(--md-sys-color-inverse-primary);
+}
+.inverse-primary-text {
+  color: var(--md-sys-color-inverse-primary);
+}
+.shadow {
+  background-color: var(--md-sys-color-shadow);
+}
+.shadow-text {
+  color: var(--md-sys-color-shadow);
+}
+.surface-tint {
+  background-color: var(--md-sys-color-surface-tint);
+}
+.surface-tint-text {
+  color: var(--md-sys-color-surface-tint);
+}
+.outline-variant {
+  background-color: var(--md-sys-color-outline-variant);
+}
+.outline-variant-text {
+  color: var(--md-sys-color-outline-variant);
+}
+.scrim {
+  background-color: var(--md-sys-color-scrim);
+}
+.scrim-text {
+  color: var(--md-sys-color-scrim);
+}
+*/

@@ -8,19 +8,18 @@ import { Wallet } from 'src/app/models/wallet/wallet.model';
   providedIn: 'root',
 })
 export class WalletService {
-  xGameKeyring: Keyring;
+  xodeKeyring: Keyring;
 
   constructor() {
-    this.xGameKeyring = new Keyring({ type: 'sr25519' });
+    this.xodeKeyring = new Keyring({ type: 'sr25519' });
     (async () => {
-      await web3Enable('XGAME DASHBOARD');
+      await web3Enable('XODE DASHBOARD');
     })();
   }
 
   getWalletList() {
-    // this.xGameKeyring.getPairs()
     accountsObservable;
-    return this.xGameKeyring.pairs.map<Wallet>((pair) => ({
+    return this.xodeKeyring.pairs.map<Wallet>((pair) => ({
       name: pair.meta.name || '',
       address: pair.address,
     }));

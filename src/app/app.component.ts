@@ -10,7 +10,7 @@ import { cryptoWaitReady } from '@polkadot/util-crypto';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  title = 'xgame-wallet';
+  title = 'xode-wallet';
 
   constructor() {
     (async () => {

@@ -1,12 +1,12 @@
 <div class="create-account-header-container">
   <div class="create-account-header-inner-container">
     <div class="create-account-header-branding-container">
-      <img src="assets/logo-icon.webp" class="xgame-header-logo" />
+      <img src="assets/xode-logo.png" class="xode-header-logo" />
       <span class="create-account-header-label">Create Account</span>
     </div>
     <div class="create-account-header-controls">
       <!--a href="/home">Cancel</a-->
-      <button matButton (click)="cancelAccountCreation()">Cancel</button>
+      <button mat-button (click)="cancelAccountCreation()">Cancel</button>
     </div>
   </div>
 </div>
@@ -95,7 +95,7 @@
       <button mat-button (click)="goToCreateAccountPrevStep()">
         <mat-icon>arrow_back</mat-icon>
       </button>
-      <button mat-raised-button (click)="saveNewAccount()">
+      <button mat-raised-button color="primary" (click)="saveNewAccount()">
         <mat-icon>arrow_forward</mat-icon>
         Add the account with the generated seed
       </button>
